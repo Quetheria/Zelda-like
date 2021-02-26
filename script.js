@@ -8,6 +8,7 @@ function preload() {
 // Runs once before draw()
 function setup() {
   createCanvas(400, 400) // width, height of screen
+
 }
 
 
