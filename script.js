@@ -3,12 +3,12 @@ let x= 200;
 let y=200;
 // Runs once before setup()
 function preload() {
-
+  watElemen=loadImage("assets/elemental.png")
 }
 
 // Runs once before draw()
 function setup() {
-  createCanvas(400, 400) // width, height of screen
+  createCanvas(1900, 1055) // width, height of screen
   frameRate(30);
 }
 
@@ -28,6 +28,6 @@ function draw() {
   if (keyIsDown(68)){
     x=x+3
   }
-  ellipse(x, y, 20)
+  image(watElemen, x, y)
 
 }
