@@ -28,48 +28,41 @@ function preload() {
 function setup() {
   createCanvas(800, 800) // width, height of screen
   player=createSprite(200,200);
-  elemen=createSprite(600,200)
-  // player.addAnimation("walk",playerAnim);
-  // player.addAnimation("still",playerStillAnim);
-  // elemen.addAnimation("bounce",elemenAnim);
+  elemen=createSprite(600,200);
+
+  player.addAnimation("walk",playerAnim);
+  player.addAnimation("still",playerStillAnim);
+  elemen.addAnimation("bounce",elemenAnim);
 }
 
 
 // Runs in a loop foreverlet 
 
 function draw() {
-  
   clear();
-  down=false;
-  player.collide(elemen);
+  
   if (keyIsDown(87)){
     y=y-3;
-    down=true;
+    player.position.y=y;
+    player.changeAnimation("walk")
   }
   if (keyIsDown(83)){
     y=y+3;
-    down=true;
+    player.position.y=y;
+    player.changeAnimation("walk")
   }
   if (keyIsDown(65)){
     x=x-3;
-    down=true;
-
+    player.position.x=x;
+    player.changeAnimation("walk")
   }
   if (keyIsDown(68)){
     x=x+3;
-    down=true;
-  }
-
-  player.position.x=x;
-  player.position.y=y;
-
-  if (down==true){
-    // player.changeAnimation("walk")
-    animation(playerAnim,x,y)
+    player.position.x=x;
+    player.changeAnimation("walk")
   }else{
-    // player.changeAnimation("still")
-    animation(playerStillAnim,x,y)
+    player.changeAnimation("still")
   }
-  animation(elemenAnim,600,200)
-  
+  player.collide(elemen);
+  drawSprites();
 }
