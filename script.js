@@ -29,9 +29,9 @@ function setup() {
   createCanvas(800, 800) // width, height of screen
   player=createSprite(200,200);
   elemen=createSprite(600,200)
-  player.addAnimation("walk",playerAnim);
-  player.addAnimation("still",playerStillAnim);
-  elemen.addAnimation("bounce",elemenAnim);
+  // player.addAnimation("walk",playerAnim);
+  // player.addAnimation("still",playerStillAnim);
+  // elemen.addAnimation("bounce",elemenAnim);
 }
 
 
@@ -64,10 +64,12 @@ function draw() {
   player.position.y=y;
 
   if (down==true){
-    player.changeAnimation("walk")
+    // player.changeAnimation("walk")
+    animation(playerAnim,x,y)
   }else{
-    player.changeAnimation("still")
+    // player.changeAnimation("still")
+    animation(playerStillAnim,x,y)
   }
-  
+  animation(elemenAnim,600,200)
   
 }
